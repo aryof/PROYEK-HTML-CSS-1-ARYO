@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="page 1 (css).css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;800;900&display=swap" rel="stylesheet">
@@ -12,7 +12,9 @@
   <body>
     <header>
         <div class="header-wrap">
-            <img class="header-logo" src="https://github.com/aryof/gambar-proyek-html-css-1/blob/main/Logo%20White.png?raw=true">
+          <a class="header-logo" href="#">
+            <img src="https://github.com/aryof/gambar-proyek-html-css-1/blob/main/Logo%20White.png?raw=true">
+          </a>            
             <div class="header-right">
                 <a href="#">Products</a>
                 <a href="#">Store</a>
@@ -26,28 +28,56 @@
     </header>
     <div class="main-wrapper">
       <div class="container">
-        <div class="main-icon-1">
-          <img src="https://github.com/aryof/gambar-proyek-html-css-1/blob/main/Mask%20group-2.png?raw=true">
+        <div class="reveal" class="active" class="fade-bottom">
+          <div class="item-1">
+            <div class="main-icon-1">
+              <img src="https://github.com/aryof/gambar-proyek-html-css-1/blob/main/Mask%20group-2.png?raw=true">
+            </div>
+            <div class="mainborder-1"></div>
+            <div class="maintext-1">  
+              <h>Who are we?</h>
+              <p>We are Jakarta-based coffee and tea house focused on professionally brewing local sourced, high quality, coffee beans and tea leaves.</p>
+            </div>
+          </div>  
         </div>
-        <div class="mainborder-1"></div>
-        <div class="maintext-1">  
-          <h>Who are we?</h>
-          <p>We are Jakarta-based coffee and tea house focused on professionally brewing local sourced, high quality, coffee beans and tea leaves.</p>
+        <div class="reveal" class="active" class="fade-right">
+          <div class="main-icon-2">
+            <h>Product Showcase</h>
+            <div class="mainborder-2"></div>
+            <p>Our products contain the highest quality ingredients processed with care.</p>
+            <img class="main-icon-2-img" src="https://github.com/aryof/gambar-proyek-html-css-1/blob/main/Mask%20group-1.png?raw=true">
+            <a class="see-coffee-tea" href="#">See our coffee and tea</a>
+          </div>
         </div>
-        <div class="main-icon-2">
-          <h>Product Showcase</h>
-          <div class="mainborder-2"></div>
-          <p>Our products contain the highest quality ingredients processed with care.</p>
-          <img class="main-icon-2-img" src="https://github.com/aryof/gambar-proyek-html-css-1/blob/main/Mask%20group-1.png?raw=true">
-          <a class="see-coffee-tea" href="#">See our coffee and tea</a>
+        <div class="reveal" class="active" class="fade-left">
+          <div class="main-icon-3">
+            <img src="https://github.com/aryof/gambar-proyek-html-css-1/blob/main/Mask%20group.png?raw=true">
+            <h>Hang out with us!</h>
+            <div class="mainborder-3"></div>
+            <p>Our stores use sustainable, furnitures, surrounded by nature, to help our planet survive.</p>
+            <a class="Find-our-cafes" href="#">Find our cafes</a>
+          </div>
         </div>
-        <div class="main-icon-3">
-          <img src="https://github.com/aryof/gambar-proyek-html-css-1/blob/main/Mask%20group.png?raw=true">
-          <h>Hang out with us!</h>
-          <div class="mainborder-3"></div>
-          <p>Our stores use sustainable, furnitures, surrounded by nature, to help our planet survive.</p>
-          <a class="Find-our-cafes" href="#">Find our cafes</a>
-        </div>
+        <script>
+          function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+              var windowHeight = window.innerHeight;
+              var elementTop = reveals[i].getBoundingClientRect().top;
+              var elementVisible = 150;
+              if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+              } else {
+                reveals[i].classList.remove("active");
+              }
+            }
+          }
+          
+          window.addEventListener("scroll", reveal);
+  
+          // To check the scroll position on page load
+          reveal();
+        </script>
       </div>
       <div class="sub-main-wrapper-1">
         <div class="subtitle-2">
@@ -95,7 +125,7 @@
     <div class="business-info">
       <div class="business-products">
         <h>Products</h>
-        <a href="https://aryof.github.io/menu-page/">Coffee Based</a>
+        <a href="#">Coffee Based</a>
         <a href="#">Non-Coffee</a>
         <a href="#">Tea Based</a>
       </div>
